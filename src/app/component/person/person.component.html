@@ -1,0 +1,77 @@
+<div class="container">
+    <form>
+        <h3>Persona/Consumidor</h3>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="FirtsName"
+                    id="FirtsName">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control mb-3" placeholder="Segundo nombre" name="SecondName"
+                    id="SecondName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="text" class="form-control mb-3" placeholder="Apellido" name="LastName"
+                    id="LastName"></div>
+            <div class="col"><input type="text" class="form-control mb-3" placeholder="Segundo Apelldio"
+                    name="SecondLastName" id="SecondLastName">
+            </div>
+            <div class="col"><input type="text" class="form-control mb-3" placeholder="Apellido de Casda"
+                    name="MarridLastName" id="MarridLastName">
+            </div>
+        </div>
+
+        <div class="container">
+            <h4>Genero</h4>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" id="Female" value="F">
+                <label for="Female">Femenino</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" id="Male" value="M">
+                <label for="Male">Masculino</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" id="None" value="">
+                <label for="None">Prefiero no Decirlo</label>
+            </div>
+        </div>
+        <div class="row">
+            <h4>Identificación</h4>
+            <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit"></div>
+            <div class="col"><input type="text" placeholder="DPI" name="Dpi" class="form-control" id="Dpi"></div>
+        </div>
+        <div>
+            <h4>Ubicación</h4>
+            <div class="row">
+                <div class="col">
+                    <select name="Departments" id="Deparments" class="form-select  mb-3"
+                        aria-label="Default select example">
+                        <option selected>Departamentos</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select name="Townships" id="Townships" class="form-select  mb-3"
+                        aria-label="Default select example">
+                        <option selected>Municipios</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <select name="Diaco" id="Diaco" class="form-select  mb-3" aria-label="Default select example">
+                <option selected>Sucursal DIACO</option>
+            </select>
+        </div>
+        <div class="row mb-3">
+            <h4>Contacto</h4>
+            <div class="col"><input type="text" name="Phone" placeholder="Phone" class="form-control" id="Phone">
+            </div>
+            <div class="col"><input type="email" name="mail" placeholder="Email" class="form-control" id="mail">
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary">Enviar</button>
+    </form>
+</div>

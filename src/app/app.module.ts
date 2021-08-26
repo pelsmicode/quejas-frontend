@@ -7,13 +7,15 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PersonComponent } from './component/person/person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainViewComponent
+    MainViewComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
