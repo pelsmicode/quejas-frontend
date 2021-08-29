@@ -1,0 +1,40 @@
+<br>
+<div class="container">
+    <form [formGroup]="anonimusFormGroup" (ngSubmit)="onFormVo(anonimusFormGroup.value)">
+        <h3>Queja anónima</h3>
+
+        <div>
+            <h4>Ubicación</h4>
+            <div class="row">
+                <div class="col">
+                    <select name="Departments" id="Deparments" class="form-select  mb-3"
+                        aria-label="Default select example">
+                        <option selected>Departamentos</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select name="Townships" id="Townships" class="form-select  mb-3"
+                        aria-label="Default select example">
+                        <option selected>Municipios</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <select name="Diaco" id="Diaco" class="form-select  mb-3" aria-label="Default select example">
+                <option selected>Sucursal DIACO</option>
+            </select>
+        </div>
+        <div class="row mb-3">
+            <h4>Contacto</h4>
+            <div class="col"><input type="tel"  pattern="[^0-9]+" name="Phone" placeholder="Phone (opcional)" class="form-control" id="Phone"
+                    formControlName="phone">
+            </div>
+            <div class="col"><input type="email" name="mail" placeholder="Email (opcional)" class="form-control" id="mail"
+                    formControlName="email">
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary">Enviar</button>
+    </form>
+</div>

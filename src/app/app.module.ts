@@ -7,7 +7,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PersonComponent } from './component/person/person.component';
+import { PersonComponent } from './components/person/person.component';
+import { AnomimusComponent } from './components/anomimus/anomimus.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PersonComponent } from './component/person/person.component';
     HeaderComponent,
     FooterComponent,
     MainViewComponent,
-    PersonComponent
+    PersonComponent,
+    AnomimusComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Branch } from "./diaco.branch";
 import { Township } from "./township";
 
-export class Person {
+export interface Person {
     id: number;
     name: string;
     lastname: string;

@@ -1,46 +1,48 @@
+<br>
 <div class="container">
-    <form>
+    <form [formGroup]="personFormGroup" (ngSubmit)="onFormVo(personFormGroup.value)">
         <h3>Persona/Consumidor</h3>
+
         <div class="row">
             <div class="col">
-                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="FirtsName"
-                    id="FirtsName">
+                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="Firstname"
+                    id="Firtsname" formControlName="name">
             </div>
             <div class="col">
-                <input type="text" class="form-control mb-3" placeholder="Segundo nombre" name="SecondName"
-                    id="SecondName">
+                <input type="text" class="form-control mb-3" placeholder="Segundo nombre" name="Secondname"
+                    id="Secondname" formControlName="secondname">
             </div>
         </div>
         <div class="row">
-            <div class="col"><input type="text" class="form-control mb-3" placeholder="Apellido" name="LastName"
-                    id="LastName"></div>
+            <div class="col"><input type="text" class="form-control mb-3" placeholder="Apellido" name="Lastname"
+                    id="Lastname" formControlName="lastname"></div>
             <div class="col"><input type="text" class="form-control mb-3" placeholder="Segundo Apelldio"
-                    name="SecondLastName" id="SecondLastName">
+                    name="SecondLastName" id="SecondLastName" formControlName="secondlastname">
             </div>
             <div class="col"><input type="text" class="form-control mb-3" placeholder="Apellido de Casda"
-                    name="MarridLastName" id="MarridLastName">
+                    name="MarriedLastName" id="MarriedLastName" formControlName="marriedlastname">
             </div>
         </div>
 
         <div class="container">
             <h4>Genero</h4>
             <div class="form-check">
-                <input type="radio" class="form-check-input" name="gender" id="Female" value="F">
+                <input type="radio" class="form-check-input" name="gender" id="Female" value="F" formControlName="gender">
                 <label for="Female">Femenino</label>
             </div>
             <div class="form-check">
-                <input type="radio" class="form-check-input" name="gender" id="Male" value="M">
+                <input type="radio" class="form-check-input" name="gender" id="Male" value="M" formControlName="gender">
                 <label for="Male">Masculino</label>
             </div>
             <div class="form-check">
-                <input type="radio" class="form-check-input" name="gender" id="None" value="">
+                <input type="radio" class="form-check-input" name="gender" id="None" value="N" formControlName="gender">
                 <label for="None">Prefiero no Decirlo</label>
             </div>
         </div>
         <div class="row">
             <h4>Identificación</h4>
-            <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit"></div>
-            <div class="col"><input type="text" placeholder="DPI" name="Dpi" class="form-control" id="Dpi"></div>
+            <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit" formControlName="nit"></div>
+            <div class="col"><input type="text" placeholder="DPI" name="Dpi" class="form-control" id="Dpi" formControlName="dpi"></div>
         </div>
         <div>
             <h4>Ubicación</h4>
@@ -67,9 +69,11 @@
         </div>
         <div class="row mb-3">
             <h4>Contacto</h4>
-            <div class="col"><input type="text" name="Phone" placeholder="Phone" class="form-control" id="Phone">
+            <div class="col"><input type="tel" pattern="[0-9]{8}" name="Phone" placeholder="Phone" class="form-control" id="Phone"
+                formControlName="phone">
             </div>
-            <div class="col"><input type="email" name="mail" placeholder="Email" class="form-control" id="mail">
+            <div class="col"><input type="email" name="mail" placeholder="Email" class="form-control" id="mail"
+                formControlName="email">
             </div>
         </div>
         <button class="btn btn-lg btn-primary">Enviar</button>
