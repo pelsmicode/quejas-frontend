@@ -9,6 +9,7 @@ import { MainViewComponent } from './components/main-view/main-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonComponent } from './components/person/person.component';
 import { AnomimusComponent } from './components/anomimus/anomimus.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AnomimusComponent } from './components/anomimus/anomimus.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

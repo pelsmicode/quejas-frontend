@@ -1,6 +1,6 @@
 import { Department } from "./deparment";
 
-export class Township {
+export interface Township {
     id: number;
     name: string;
     deparment: Department;

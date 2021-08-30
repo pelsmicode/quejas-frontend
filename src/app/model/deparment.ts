@@ -1,6 +1,6 @@
 import { Region } from "./region";
 
-export class Department {
+export interface Department {
     id: number;
     name: string;
     region: Region;

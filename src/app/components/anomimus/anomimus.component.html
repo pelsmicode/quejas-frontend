@@ -7,23 +7,29 @@
             <h4>Ubicación</h4>
             <div class="row">
                 <div class="col">
+                    <h4>Deparmento</h4>
                     <select name="Departments" id="Deparments" class="form-select  mb-3"
-                        aria-label="Default select example">
-                        <option selected>Departamentos</option>
+                        aria-label="Default select example" (change)="changeOnDeparments($event)" formControlName="department">
+                        <option  selected>Departamentos</option>
+                        <option *ngFor="let dep of deparments" [value]="dep.id">{{dep.name}}</option>
                     </select>
                 </div>
                 <div class="col">
+                    <h4>Municipio</h4>
                     <select name="Townships" id="Townships" class="form-select  mb-3"
-                        aria-label="Default select example">
+                        aria-label="Default select example" formControlName="township" >
                         <option selected>Municipios</option>
+                        <option *ngFor="let township of townships" [value]="township.id">{{township.name}}</option>
                     </select>
                 </div>
             </div>
 
         </div>
         <div>
-            <select name="Diaco" id="Diaco" class="form-select  mb-3" aria-label="Default select example">
+            <h4>Sucursal más cercana</h4>
+            <select name="Diaco" id="Diaco" class="form-select  mb-3" aria-label="Default select example" formControlName="branch">
                 <option selected>Sucursal DIACO</option>
+                <option *ngFor="let branch of diacoBranches" [value]="branch.id">{{branch.name}} {{branch.township.name}}</option>
             </select>
         </div>
         <div class="row mb-3">

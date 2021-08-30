@@ -1,7 +1,7 @@
 import { Company } from "./company";
 import { Person } from "./person";
 
-export class {
+export interface Complaint {
     id: number;
     noDoc: string;
     dateDoc: string;
