@@ -3,11 +3,11 @@ import { Person } from "./person";
 
 export interface Complaint {
     id: number;
-    noDoc: string;
-    dateDoc: string;
+    no_doc: string;
+    date_doc: string;
     detail: string;
     petition: string;
-    createdAt: Date;
+    created_at: Date;
     company: Company;
     person: Person;
 }

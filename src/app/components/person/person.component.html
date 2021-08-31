@@ -5,8 +5,8 @@
 
         <div class="row">
             <div class="col">
-                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="Firstname"
-                    id="Firtsname" formControlName="name">
+                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="Firstname" id="Firtsname"
+                    formControlName="name" required>
             </div>
             <div class="col">
                 <input type="text" class="form-control mb-3" placeholder="Segundo nombre" name="Secondname"
@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col"><input type="text" class="form-control mb-3" placeholder="Apellido" name="Lastname"
-                    id="Lastname" formControlName="lastname"></div>
+                    id="Lastname" formControlName="lastname" required></div>
             <div class="col"><input type="text" class="form-control mb-3" placeholder="Segundo Apelldio"
                     name="SecondLastName" id="SecondLastName" formControlName="secondlastname">
             </div>
@@ -27,7 +27,8 @@
         <div class="container">
             <h4>Genero</h4>
             <div class="form-check">
-                <input type="radio" class="form-check-input" name="gender" id="Female" value="F" formControlName="gender">
+                <input type="radio" class="form-check-input" name="gender" id="Female" value="F"
+                    formControlName="gender">
                 <label for="Female">Femenino</label>
             </div>
             <div class="form-check">
@@ -41,39 +42,45 @@
         </div>
         <div class="row">
             <h4>Identificación</h4>
-            <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit" formControlName="nit"></div>
-            <div class="col"><input type="text" placeholder="DPI" name="Dpi" class="form-control" id="Dpi" formControlName="dpi"></div>
+            <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit"
+                    formControlName="nit" required></div>
+            <div class="col"><input type="text" placeholder="DPI" name="Dpi" class="form-control" id="Dpi"
+                    formControlName="dpi" required></div>
         </div>
-        <div>
-            <h4>Ubicación</h4>
-            <div class="row">
-                <div class="col">
-                    <select name="Departments" id="Deparments" class="form-select  mb-3"
-                        aria-label="Default select example">
-                        <option selected>Departamentos</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <select name="Townships" id="Townships" class="form-select  mb-3"
-                        aria-label="Default select example">
-                        <option selected>Municipios</option>
-                    </select>
-                </div>
-            </div>
 
+        <h4>Ubicación</h4>
+        <div class="row">
+            <div class="col">
+                <h4>Deparmento</h4>
+                <select name="Departments" id="Deparments" class="form-select  mb-3" aria-label="Default select example"
+                    (change)="changeOnDeparments($event)" formControlName="department" required>
+                    <option selected>Departamentos</option>
+                    <option *ngFor="let dep of deparments" [value]="dep.id">{{dep.name}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <h4>Municipio</h4>
+                <select name="Townships" id="Townships" class="form-select  mb-3" aria-label="Default select example"
+                    formControlName="township" required>
+                    <option selected>Municipios</option>
+                    <option *ngFor="let township of townships" [value]="township.id">{{township.name}}</option>
+                </select>
+            </div>
         </div>
         <div>
-            <select name="Diaco" id="Diaco" class="form-select  mb-3" aria-label="Default select example">
+            <h4>Sucursal más cercana</h4>
+            <select name="Diaco" id="Diaco" class="form-select  mb-3" aria-label="Default select example" formControlName="branch" required>
                 <option selected>Sucursal DIACO</option>
+                <option *ngFor="let branch of diacoBranches" [value]="branch.id">{{branch.name}} {{branch.township.name}}</option>
             </select>
         </div>
         <div class="row mb-3">
             <h4>Contacto</h4>
-            <div class="col"><input type="tel" pattern="[0-9]{8}" name="Phone" placeholder="Phone" class="form-control" id="Phone"
-                formControlName="phone">
+            <div class="col"><input type="tel" pattern="[0-9]{8}" name="Phone" placeholder="Phone" class="form-control"
+                    id="Phone" formControlName="phone">
             </div>
             <div class="col"><input type="email" name="mail" placeholder="Email" class="form-control" id="mail"
-                formControlName="email">
+                    formControlName="email">
             </div>
         </div>
         <button class="btn btn-lg btn-primary">Enviar</button>
