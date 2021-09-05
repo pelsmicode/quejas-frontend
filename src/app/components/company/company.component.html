@@ -1,0 +1,47 @@
+<br>
+<div class="container">
+    <form [formGroup]="companyFormGroup" (ngSubmit)="onFormVo(companyFormGroup.value)">
+        <h3>Datos de la Entidad</h3>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="Firstname" id="Firtsname"
+                    formControlName="name" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit"
+                    formControlName="nit" required></div>
+        </div>
+
+        <h4>Ubicación</h4>
+        <div class="row">
+            <div class="col">
+                <h4>Deparmento</h4>
+                <select name="Departments" id="Deparments" class="form-select  mb-3" aria-label="Default select example"
+                    (change)="changeOnDeparments($event)" formControlName="department" required>
+                    <option selected>Departamentos</option>
+                    <option *ngFor="let dep of deparments" [value]="dep.id">{{dep.name}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <h4>Municipio</h4>
+                <select name="Townships" id="Townships" class="form-select  mb-3" aria-label="Default select example"
+                    formControlName="township" required>
+                    <option selected>Municipios</option>
+                    <option *ngFor="let township of townships" [value]="township.id">{{township.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <h4>Contacto</h4>
+            <div class="col"><input type="tel" pattern="[0-9]{8}" name="Phone" placeholder="Phone" class="form-control"
+                    id="Phone" formControlName="phone">
+            </div>
+            <div class="col"><input type="email" name="mail" placeholder="Email" class="form-control" id="mail"
+                    formControlName="email">
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary">Enviar</button>
+    </form>
+</div>

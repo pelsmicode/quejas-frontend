@@ -17,4 +17,14 @@ export class ComplaintService {
     const url: string = this.url + '/main';
     return this.http.get<Complaint[]>(url);
   }
+
+  getPersonComplaint(): Observable<number> {
+    const url: string = this.url + '/person';
+    return this.http.get<number>(url);
+  }
+
+  getCompanyComplaint(): Observable<number> {
+    const url: string = this.url + '/company'
+    return this.http.get<number>(url);
+  }
 }

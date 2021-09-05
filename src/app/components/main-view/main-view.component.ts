@@ -12,9 +12,6 @@ import { ComplaintService } from 'src/app/service/complaint.service';
 export class MainViewComponent implements OnInit {
 
   complaints: Complaint[] = [];
-  title = 'appBootstrap';
-  
-  closeResult: string = '';
 
   constructor(private complaintService: ComplaintService, private router: Router, private modalService: NgbModal) { }
 
@@ -23,25 +20,6 @@ export class MainViewComponent implements OnInit {
       this.complaints = data
       console.log(this.complaints);
     })
-  }
-
-  open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  
-  // TODO: Agregar botones que redireccionen a la creación de contenidos
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
   }
 
 }

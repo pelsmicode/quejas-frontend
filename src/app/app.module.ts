@@ -10,7 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonComponent } from './components/person/person.component';
 import { AnomimusComponent } from './components/anomimus/anomimus.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './components/home/home.component';
+import { CompanyComponent } from './components/company/company.component';
+import { ComplaintComponent } from './components/complaint/complaint.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     FooterComponent,
     MainViewComponent,
     PersonComponent,
-    AnomimusComponent
+    AnomimusComponent,
+    HomeComponent,
+    CompanyComponent,
+    ComplaintComponent
   ],
   imports: [
     BrowserModule,
