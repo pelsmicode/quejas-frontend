@@ -14,6 +14,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { CompanyComponent } from './components/company/company.component';
 import { ComplaintComponent } from './components/complaint/complaint.component'
+import { NgxEchartsModule } from 'ngx-echarts';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { DeparmentChartComponent } from './components/statistics/deparment-chart/deparment-chart.component';
+import { GenderChartComponent } from './components/statistics/gender-chart/gender-chart.component';
+import { AnonimusChartComponent } from './components/statistics/anonimus-chart/anonimus-chart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,11 @@ import { ComplaintComponent } from './components/complaint/complaint.component'
     AnomimusComponent,
     HomeComponent,
     CompanyComponent,
-    ComplaintComponent
+    ComplaintComponent,
+    StatisticsComponent,
+    DeparmentChartComponent,
+    GenderChartComponent,
+    AnonimusChartComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,10 @@ import { ComplaintComponent } from './components/complaint/complaint.component'
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

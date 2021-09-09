@@ -6,12 +6,14 @@ import { AnomimusComponent } from './components/anomimus/anomimus.component';
 import { HomeComponent } from './components/home/home.component';
 import { CompanyComponent } from './components/company/company.component';
 import { ComplaintComponent } from './components/complaint/complaint.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: 'full' },
   { path: "home", component: HomeComponent },
   { path: "main", component: MainViewComponent },
   { path: "person", component: PersonComponent },
+  { path: "charts", component: StatisticsComponent },
   { path: "company", component: CompanyComponent },
   { path: "anonimus", component: AnomimusComponent },
   { path: "complaint", component: ComplaintComponent }
