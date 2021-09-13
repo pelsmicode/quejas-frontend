@@ -1,17 +1,20 @@
 <br>
 <div class="container">
-    <form [formGroup]="companyFormGroup" (ngSubmit)="onFormVo(companyFormGroup.value)">
+    <form [formGroup]="companyFormGroup" (ngSubmit)="saveCompany(companyFormGroup.value)">
         <h3>Datos de la Entidad</h3>
 
         <div class="row">
             <div class="col">
-                <input type="text" class="form-control mb-3" placeholder="Primer nombre" name="Firstname" id="Firtsname"
+                <input type="text" class="form-control mb-3" placeholder="Nombre" name="Firstname" id="Firtsname"
                     formControlName="name" required>
             </div>
         </div>
         <div class="row">
             <div class="col"><input type="text" placeholder="NIT" name="Nit" class="form-control" id="Nit"
                     formControlName="nit" required></div>
+
+            <div class="col"><input type="text" placeholder="Dirección" name="address" class="form-control" id="address"
+                    formControlName="address" required></div>
         </div>
 
         <h4>Ubicación</h4>

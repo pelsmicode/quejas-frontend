@@ -13,3 +13,16 @@ export interface Person {
     township: Township;
     branch: Branch;
 }
+
+export interface PersonRequest {
+    id: number;
+    name: string;
+    lastname: string;
+    dpi: string;
+    nit: string;
+    gender: string;
+    email: string;
+    phone: string;
+    township: Township;
+    branch: number;
+}

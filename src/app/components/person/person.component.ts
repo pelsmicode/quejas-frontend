@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Department } from 'src/app/model/deparment';
 import { Branch } from 'src/app/model/diaco.branch';
-import { Person } from 'src/app/model/person';
+import { Person} from 'src/app/model/person';
 import { Township } from 'src/app/model/township';
 import { DeparmentsService } from 'src/app/service/deparments.service';
 import { DiacoBranchService } from 'src/app/service/diaco-branch.service';
@@ -31,7 +31,7 @@ export class PersonComponent implements OnInit {
     nit: new FormControl(''),
     dpi: new FormControl(''),
     branch: new FormControl(),
-    deparament: new FormControl(),
+    department: new FormControl(),
     township: new FormControl()
   });
 
@@ -39,7 +39,7 @@ export class PersonComponent implements OnInit {
   townships: Township[] = [];
   diacoBranches: Branch[] = [];
 
-  constructor(private departmentService: DeparmentsService, private townshipService: TownshipService, 
+  constructor(private departmentService: DeparmentsService, private townshipService: TownshipService,
     private diacoBranchService: DiacoBranchService, private personService: PersonService, private router: Router) { }
 
   ngOnInit(): void {
@@ -76,13 +76,14 @@ export class PersonComponent implements OnInit {
     }
   }
 
-  savePerson() {
-    // let d = this.personService.savePerson(person).subscribe(data => {
-    //   console.log(data);
-    //   return data;
-    // });
+  savePerson(person: Person) {
+    console.log("PersonRequest", person)
+    let d = this.personService.savePerson(person).subscribe(data => {
+      console.log(data);
+      return data;
+    });
 
-    // if (d) 
-      this.router.navigate(['/company'])
+    if (d)
+      this.router.navigate(['/company']);
   }
 }

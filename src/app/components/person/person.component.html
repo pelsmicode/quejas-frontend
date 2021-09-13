@@ -1,6 +1,6 @@
 <br>
 <div class="container">
-    <form [formGroup]="personFormGroup" (ngSubmit)="savePerson()">
+    <form [formGroup]="personFormGroup" (ngSubmit)="savePerson(personFormGroup.value)">
         <h3>Persona/Consumidor</h3>
 
         <div class="row">

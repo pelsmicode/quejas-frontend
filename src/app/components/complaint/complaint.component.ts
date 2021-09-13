@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Company } from 'src/app/model/company';
+import { Complaint } from 'src/app/model/complaint';
 import { Person } from 'src/app/model/person';
 import { ComplaintService } from 'src/app/service/complaint.service';
 
@@ -21,7 +24,7 @@ export class ComplaintComponent implements OnInit {
     person: new FormControl(this.idPerson)
   });
 
-  constructor(private complaintService: ComplaintService) {
+  constructor(private complaintService: ComplaintService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -35,21 +38,32 @@ export class ComplaintComponent implements OnInit {
 
   onPersonComplaint() {
     this.complaintService.getPersonComplaint().subscribe(data => {
-      this.idPerson = data;
-      console.log("person", this.idPerson);
+      const p: Person = data;
+      this.idPerson = p.id
+      console.log("person", this.idPerson, 'data', data);
       this.companyFormGroup.patchValue({
         person: this.idPerson
       });
     });
+    
   }
 
   onCompanyComplaint() {
     this.complaintService.getCompanyComplaint().subscribe(data => {
-      this.idCompany = data;
-      console.log("company", this.idCompany);
+      const c: Company = data;
+      this.idCompany = c.id
+      console.log("company", this.idCompany, 'data', data);
       this.companyFormGroup.patchValue({
         company: this.idCompany
       });
     });
+  }
+
+  saveComplaint(complaint:Complaint) {
+    let d = this.complaintService.saveComplaint(complaint).subscribe(data => {
+      return data
+    });
+    alert("Proceso de queja realizado")
+    this.router.navigate(['/main']);
   }
 }

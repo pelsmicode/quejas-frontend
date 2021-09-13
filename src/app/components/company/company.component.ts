@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Company } from 'src/app/model/company';
 import { Department } from 'src/app/model/deparment';
 import { Township } from 'src/app/model/township';
+import { CompanyService } from 'src/app/service/company.service';
 import { DeparmentsService } from 'src/app/service/deparments.service';
 import { TownshipService } from 'src/app/service/township.service';
 
@@ -24,8 +27,9 @@ export class CompanyComponent implements OnInit {
 
   deparments: Department[] = [];
   townships: Township[] = [];
-  
-  constructor(private departmentService: DeparmentsService, private townshipService: TownshipService) { }
+
+  constructor(private departmentService: DeparmentsService, private townshipService: TownshipService,
+    private companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
     this.onDeparments();
@@ -52,5 +56,15 @@ export class CompanyComponent implements OnInit {
     } else {
       console.log("novo")
     }
+  }
+
+  saveCompany(company: Company) {
+    let d = this.companyService.saveCompany(company).subscribe(data => {
+      console.log(data);
+      return data;
+    });
+
+    if (d)
+      this.router.navigate(['/complaint']);
   }
 }
