@@ -18,6 +18,7 @@ import { TownshipService } from 'src/app/service/township.service';
 export class AnomimusComponent implements OnInit {
 
   anonimusFormGroup = new FormGroup({
+    name: new FormControl('ANONIMO'),
     branch: new FormControl('', Validators.required),
     department: new FormControl('', Validators.required),
     township: new FormControl('', Validators.required),
