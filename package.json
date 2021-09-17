@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "postinstall": "ng build --prod",
     "test": "ng test"
   },
   "private": true,
@@ -41,5 +42,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
+  },
+  "engines": {
+    "node": "14.17.4",
+    "npm": "6.14.14"
   }
 }
