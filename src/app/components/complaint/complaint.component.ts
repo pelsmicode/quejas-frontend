@@ -28,8 +28,8 @@ export class ComplaintComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.onPersonComplaint();
     this.onCompanyComplaint();
+    this.onPersonComplaint();
   }
 
   onFormVo(form: FormGroup) {
@@ -54,7 +54,7 @@ export class ComplaintComponent implements OnInit {
       this.idCompany = c.id
       console.log("company", this.idCompany, 'data', data);
       this.companyFormGroup.patchValue({
-        company: this.idCompany
+        company: this.idCompany + 1
       });
     });
   }
