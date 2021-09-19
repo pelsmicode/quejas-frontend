@@ -33,6 +33,7 @@ export class GenderChartComponent implements OnInit {
     let none = 0;
 
     this.complaints.forEach(i => {
+      console.log("GENDER", i.person.gender);
       if (i.person.gender === 'M') {
         male++;
       } else if (i.person.gender === 'F') {
