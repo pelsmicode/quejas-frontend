@@ -51,10 +51,10 @@ export class ComplaintComponent implements OnInit {
   onCompanyComplaint() {
     this.complaintService.getCompanyComplaint().subscribe(data => {
       const c: Company = data;
-      this.idCompany = c.id
+      this.idCompany = (c.id + 1);
       console.log("company", this.idCompany, 'data', data);
       this.companyFormGroup.patchValue({
-        company: this.idCompany + 1
+        company: (this.idCompany)
       });
     });
   }
